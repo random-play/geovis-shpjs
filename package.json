@@ -1,11 +1,11 @@
 {
-  "name": "shpjs",
-  "version": "4.0.4",
+  "name": "geovis-shpjs",
+  "version": "0.0.3",
   "description": "A binary shapefile loader, for javascript. Not many caveats",
-  "main": "lib/index.js",
+  "main": "lib/index.js", 
   "repository": {
     "type": "git",
-    "url": "git://github.com/calvinmetcalf/shapefile-js.git"
+    "url": "git://github.com/random-play/geovis-shpjs.git"
   },
   "scripts": {
     "test": "mocha ./test/test.js",
@@ -20,6 +20,7 @@
   "devDependencies": {
     "babel-minify": "^0.5.1",
     "browserify": "^17.0.0",
+    "jshint": "^2.8.0",
     "chai": "^3.3.0",
     "chai-as-promised": "^5.1.0",
     "eslint": "^8.24.0",
@@ -29,13 +30,15 @@
     "semistandard": "^16.0.1"
   },
   "dependencies": {
+    "iconv-lite": "^0.4.15",
+    "text-encoding-polyfill": "^0.6.7",
     "jszip": "^3.5.0",
     "lie": "^3.0.1",
-    "lru-cache": "^7.0.0",
-    "parsedbf": "^1.1.0",
+    "lru-cache": "^7.0.0", 
     "proj4": "^2.1.4"
   },
   "browser": {
+    "./lib/parsedbf/decoder.js": "./lib/parsedbf/decoder-browser.js",
     "./lib/binaryajax.js": "./lib/binaryajax-fetch.js"
   }
 }
